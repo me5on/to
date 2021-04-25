@@ -1,0 +1,11 @@
+{
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "extends": [
+    "@azhder/eslint-config-azder"
+  ],
+  "globals": {
+    "Symbol": false
+  }
+}
