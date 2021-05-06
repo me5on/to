@@ -12,7 +12,10 @@ const props = [
 describe('module TO', () => {
 
 
-    it('is a function', () => void expect(TO).toBeFun());
+    it(
+        'is a function',
+        expect(TO).toBeFun,
+    );
 
 
     it(
@@ -27,22 +30,25 @@ describe('module TO', () => {
     );
 
 
-    describe.each([...props])('property', (key, ...aliases) => {
+    describe.each([...props])('property', (prop, ...aliases) => {
 
 
         it(
-            `"${key}" is a function`,
-            () => void expect(TO[key]).toBeFun(key),
+            `"${prop}" is a function`,
+            () => void expect(TO[prop]).toBeFun(prop),
         );
 
 
         it.each(
             aliases,
         )(
-            `"${key}" has alias %p`,
+            `"${prop}" has alias %p`,
             alias => void (
-                expect([key, alias, TO[key]])
-                    .toEqual([key, alias, TO[alias]])
+                expect(
+                    [prop, alias, TO[prop]],
+                ).toEqual(
+                    [prop, alias, TO[alias]],
+                )
             ),
         );
 

@@ -15,13 +15,13 @@ describe.each([
 
         it(
             'is a function',
-            expect(mod).toBeFun,
+            () => void expect(mod).toBeFun(name),
         );
 
 
         it(
             'has a "from" function property',
-            expect(mod.from).toBeFun,
+            () => void expect(mod.from).toBeFun(name),
         );
 
 

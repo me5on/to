@@ -9,8 +9,11 @@ import number from './number.mod.js';
 describe('number', () => {
 
 
-    it('is the any number function', () => void expect(number).toBeFun(any));
-
+    it(
+        'is the any number function',
+        () => void expect(number).toBeFun(any),
+    );
+    
 
     it.each([
         NaN,
@@ -36,6 +39,6 @@ describe('number', () => {
 
     ])(
         'returns correct number for %p',
-        expect(any).toMap
+        expect(any).toMap,
     );
 });
