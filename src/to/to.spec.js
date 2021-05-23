@@ -12,10 +12,7 @@ const props = [
 describe('module TO', () => {
 
 
-    it(
-        'is a function',
-        expect(TO).toBeFun,
-    );
+    it('is a function', expect(TO).toBeFun);
 
 
     it(
@@ -39,9 +36,7 @@ describe('module TO', () => {
         );
 
 
-        it.each(
-            aliases,
-        )(
+        it.each(aliases)(
             `"${prop}" has alias %p`,
             alias => void (
                 expect(
