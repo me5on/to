@@ -1,6 +1,6 @@
 {
   "name": "@me5on/to",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "TO",
   "repository": "https://github.com/me5on/to",
   "author": "azder <azhder@gmail.com>",
@@ -10,6 +10,8 @@
   "main": "./src/index.js",
   "exports": "./src/index.js",
   "scripts": {
+    "jst:ocvr": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "jst:wcvr": "NODE_NO_WARNINGS=1 NODE_OPTIONS=--experimental-vm-modules jest --watch-all --coverage",
     "jst:once": "NODE_OPTIONS=--experimental-vm-modules jest",
     "jst:wtch": "NODE_NO_WARNINGS=1 NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "esl:once": "eslint --ignore-path .gitignore ./",

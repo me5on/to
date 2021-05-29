@@ -7,7 +7,7 @@ describe('string', () => {
 
 
     it(
-        'is the any string function',
+        'is function',
         () => void expect(string).toBeFun(any),
     );
 
@@ -20,16 +20,20 @@ describe('string', () => {
     );
 
 
-    it.each([
+    it('contains the from.any function', () => {
+        expect(string.from.any).toBeFun();
+    });
 
+    const args = [
         ['true', true],
         ['1', 1],
         ['Symbol(dummy symbol)', Symbol('dummy symbol')],
+    ];
 
-    ])(
-        'returns correct string for %p',
-        expect(any).toMap,
-    );
+    it.each(args)('returns correct string for %p', expect(any).toMap);
 
+    it.each(args)('returns same %p called as string() and string.from.any() on %p', $ => {
+        expect(string($)).toBe(string.from.any($));
+    });
 
 });
